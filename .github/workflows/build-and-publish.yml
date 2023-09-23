@@ -23,6 +23,6 @@ jobs:
           always-auth: true
       - run: yarn install --frozen-lockfile
       - run: yarn run build
-      - run: npm publish
+      - run: yarn npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -6,6 +6,10 @@
   "author": "ReadZen",
   "license": "MIT",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/routing-clever/reader-js-lib.git"
+  },
   "scripts": {
     "build": "tsc",
     "test": "jest"
