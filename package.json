@@ -1,10 +1,14 @@
 {
   "name": "@routing-clever/reader-js-lib",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "author": "ReadZen",
   "license": "MIT",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/routing-clever/reader-js-lib.git"
@@ -13,13 +17,14 @@
     "registry": "https://npm.pkg.github.com"
   },
   "scripts": {
-    "build": "tsc",
-    "test": "jest"
+    "build": "rimraf ./dist && tsc",
+    "test": "jest --coverage"
   },
   "devDependencies": {
     "@jest/globals": "^29.7.0",
     "@types/jest": "^29.5.5",
     "jest": "^29.7.0",
+    "rimraf": "^5.0.1",
     "ts-jest": "^29.1.1",
     "typescript": "^5.2.2"
   }
