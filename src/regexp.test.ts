@@ -1,4 +1,3 @@
-import { describe, it, expect } from "@jest/globals";
 import { isURL, isEmail } from "./regexp";
 
 describe("regexp module", () => {
