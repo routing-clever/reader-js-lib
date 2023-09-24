@@ -1,7 +1,8 @@
 {
   "name": "@routing-clever/reader-js-lib",
   "version": "1.0.3",
-  "main": "dist/index.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
   "types": "dist/index.d.ts",
   "author": "ReadZen",
   "license": "MIT",
@@ -17,8 +18,9 @@
     "registry": "https://npm.pkg.github.com"
   },
   "scripts": {
-    "build": "rimraf ./dist && tsc",
-    "test": "jest --coverage"
+    "build": "rimraf ./dist && tsc && tsc -p tsconfig-cjs.json",
+    "test": "jest --coverage",
+    "prepublishOnly": "yarn run build"
   },
   "devDependencies": {
     "@jest/globals": "^29.7.0",
