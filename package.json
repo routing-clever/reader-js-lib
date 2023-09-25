@@ -18,7 +18,7 @@
     "registry": "https://npm.pkg.github.com"
   },
   "scripts": {
-    "build": "rimraf ./dist && tsc && tsc -p tsconfig-cjs.json",
+    "build": "rimraf ./dist && tsc -d --declarationDir dist/ && tsc -p tsconfig-cjs.json",
     "test": "jest --coverage",
     "prepublishOnly": "yarn run build"
   },
