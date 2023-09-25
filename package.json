@@ -1,6 +1,6 @@
 {
   "name": "@routing-clever/reader-js-lib",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/index.d.ts",
@@ -18,7 +18,7 @@
     "registry": "https://npm.pkg.github.com"
   },
   "scripts": {
-    "build": "rimraf ./dist && tsc && tsc -p tsconfig-cjs.json",
+    "build": "rimraf ./dist && tsc -d --declarationDir dist/ && tsc -p tsconfig-cjs.json",
     "test": "jest --coverage",
     "prepublishOnly": "yarn run build"
   },
