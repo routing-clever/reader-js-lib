@@ -5,7 +5,9 @@ export function isEmail(str?: string): boolean {
 
 export function isURL(str?: string): boolean {
   if (!str) return false;
-  return /(https?:\/\/)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/.test(
+  str = str.trim();
+
+  return /^(https?:\/\/|\/\/)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/.test(
     str
   );
 }
