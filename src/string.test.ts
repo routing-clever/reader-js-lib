@@ -1,4 +1,4 @@
-import { countWord } from "./string";
+import { countWord, trim, trimEnd } from "./string";
 
 describe("string module", () => {
   it("should count Chinese words", () => {
@@ -19,5 +19,16 @@ describe("string module", () => {
         "Context+《英语自学手册》联名众筹于8月21日至9月4日之间开展，分「天使版」和「普通版」两种规格"
       )
     ).toBe(40);
+  });
+
+  it("should trim the string", () => {
+    expect(trim(" 你好  ")).toBe("你好");
+    expect(trim(" Hello ")).toBe("Hello");
+  });
+
+  it("should trim the `/` end of string", () => {
+    expect(trimEnd("www.foo.com/", "/")).toBe("www.foo.com");
+    expect(trimEnd("www.foo.com#", "#")).toBe("www.foo.com");
+    expect(trimEnd("www.foo.com", "m")).toBe("www.foo.co");
   });
 });
