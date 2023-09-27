@@ -30,3 +30,19 @@ export function countWord(text: string) {
   count += Math.ceil(pnkCounter / 3) + Math.ceil(thiCounter / 4);
   return count;
 }
+
+export const trim = (str?: string) => {
+    if (!str) return str
+
+    return str.replace(/^\u200c+|\u200c+$/g, '').trim()
+}
+
+/**
+ * Trim last char of a string
+ */
+export function trimEnd(str: string, trimChar: string) {
+    if (str.endsWith(trimChar)) {
+        return str.slice(0, -1)
+    }
+    return str
+}

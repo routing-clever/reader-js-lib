@@ -7,5 +7,17 @@ describe("regexp module", () => {
 
   it("should be an URL", () => {
     expect(isURL("http://example.com")).toBeTruthy();
+    expect(isURL("https://example.com")).toBeTruthy();
+    expect(isURL("https://www.example.com")).toBeTruthy();
+    expect(isURL("https://img.example.com")).toBeTruthy();
+    expect(isURL("example.com")).toBeTruthy();
+    expect(isURL("www.example.com")).toBeTruthy();
+    expect(isURL("img.example.com")).toBeTruthy();
+    expect(isURL("//example.com")).toBeTruthy();
+
+    expect(isURL("ps://example.com")).toBeFalsy();
+    expect(isURL("ftp://example.com")).toBeFalsy();
+    expect(isURL("ws://example.com")).toBeFalsy();
+    expect(isURL("://example.com")).toBeFalsy();
   });
 });
