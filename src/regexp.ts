@@ -7,7 +7,7 @@ export function isURL(str?: string): boolean {
   if (!str) return false;
   str = str.trim();
 
-  return /^(https?:\/\/|\/\/)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/.test(
+  return /^(https?:\/\/|\/\/)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,8}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/.test(
     str
   );
 }
