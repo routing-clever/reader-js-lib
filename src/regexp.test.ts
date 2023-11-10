@@ -6,6 +6,7 @@ describe("regexp module", () => {
   });
 
   it("should be an URL", () => {
+    // right
     expect(isURL("http://example.com")).toBeTruthy();
     expect(isURL("https://example.com")).toBeTruthy();
     expect(isURL("https://www.example.com")).toBeTruthy();
@@ -14,7 +15,9 @@ describe("regexp module", () => {
     expect(isURL("www.example.com")).toBeTruthy();
     expect(isURL("img.example.com")).toBeTruthy();
     expect(isURL("//example.com")).toBeTruthy();
+    expect(isURL("https://aisuper.tools/")).toBeTruthy();
 
+    // wrong
     expect(isURL("ps://example.com")).toBeFalsy();
     expect(isURL("ftp://example.com")).toBeFalsy();
     expect(isURL("ws://example.com")).toBeFalsy();
