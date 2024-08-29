@@ -2,7 +2,8 @@ import {
   pickNameFromSender,
   pickDomainFromEmail,
   pickEmailFromSender,
-} from "./email";
+} from './email'
+import { describe, it, expect } from 'vitest'
 
 describe("Email Module", () => {
   it("should pick the name from sender", () => {
