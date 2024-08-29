@@ -1,4 +1,5 @@
 import { countWord, trim, trimEnd } from "./string";
+import { describe, it, expect } from 'vitest'
 
 describe("string module", () => {
   it("should count Chinese words", () => {

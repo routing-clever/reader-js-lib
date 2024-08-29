@@ -21,9 +21,11 @@
     "build": "rimraf ./dist && tsc -d --declarationDir dist/ && tsc -p tsconfig-cjs.json",
     "test": "vitest",
     "coverage": "vitest run --coverage",
-    "prepublishOnly": "yarn run build"
+    "prepublishOnly": "yarn run build",
+    "release": "release-it"
   },
   "devDependencies": {
+    "release-it": "^17.6.0",
     "rimraf": "^5.0.1",
     "typescript": "^5.2.2",
     "vitest": "^2.0.5"

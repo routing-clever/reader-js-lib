@@ -1,4 +1,5 @@
 import { extractDomain, removeProtocol } from "./url";
+import { describe, it, expect } from 'vitest'
 
 describe("url module", () => {
   it("should remove the protocol of the URL", () => {
