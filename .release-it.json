@@ -10,6 +10,6 @@
     "publish": false
   },
   "hooks": {
-    "before:init": "yarn test"
+    "before:init": "CI=true yarn test"
   }
 }
