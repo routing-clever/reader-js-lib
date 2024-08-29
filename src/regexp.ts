@@ -7,13 +7,14 @@ export function isURL(str?: string): boolean {
   if (!str) return false
 
   const pattern = new RegExp(
-    '^(https?:\\/\\/)?' + // protocol
-      '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.?)+[a-z]{2,}|' + // domain name
-      '((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
+    '^(https?:\\/\\/)?' + // protocol (optional)
+      '(([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+' + // subdomain + domain name
+      '[a-z]{2,}' + // top-level domain
       '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // port and path
       '(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
-      '(\\#[-a-z\\d_]*)?$',
+      '(\\#[-a-z\\d_]*)?$' + // fragment locator
+      '(?!.*\\s)', // no spaces allowed
     'i'
-  ) // fragment locator
+  )
   return !!pattern.test(str)
 }
